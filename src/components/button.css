@@ -1,0 +1,38 @@
+.yellow{
+    color:white;
+    background:orange;
+    opacity:0.7;
+}
+.yellow:hover{
+    color:white;
+    background:orange;
+    opacity:1;
+    transition: all 0.2s;
+}
+
+.white{
+    background:rgba(255,255,255);
+    opacity:0.7;
+}
+.white:hover{
+    background:rgba(255,255,255,.75);
+    opacity: 1;
+    transition: all 0.2s;
+
+}
+
+.spantwo{
+    width:4rem;
+    height:2rem;
+}
+
+.span{
+    width:2rem;
+    height:2rem;
+}
+
+.mybtn{
+    text-align: center;
+    height:50px;
+    line-height: 50px;
+}

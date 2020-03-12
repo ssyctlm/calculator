@@ -1,0 +1,7 @@
+.current{
+    font-size: 1.75rem;
+    font-weight:bold;
+    text-align: right;
+    color:rgba(255,255,255,.9);
+    word-wrap: break-word;
+}
