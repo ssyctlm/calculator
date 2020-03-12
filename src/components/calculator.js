@@ -24,6 +24,7 @@ class Calculator extends Component {
         { order: 15, id: "divide", display: "÷", value: null },
         { order: 16, id: "clear", display: "CLR", value: null },
       ],
+      screen: '',
     }
   }
   render() {
@@ -33,7 +34,7 @@ class Calculator extends Component {
         {/* this is the displayer */}
         <div className="row justify-content-center">
           <div className="col-10 bg-light border text-right pl-5 pr-5 pt-2 pb-2 mb-5" id="display">
-            {this.state.keys[3].display}
+            {this.state.screen}
           </div>
         </div>
         {/* this is keyboards */}
