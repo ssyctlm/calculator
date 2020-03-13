@@ -54,17 +54,17 @@ class Calc extends Component {
       this.setState({displayCur:parseInt(this.state.displayCur)+ parseInt(this.state.displayPre)})
       console.log(`${this.state.displayPre} + ${this.state.displayCur} = ${parseInt(this.state.displayCur)+ parseInt(this.state.displayPre)}`)
     }
-    if(this.state.operator === "-"){
+    else if(this.state.operator === "-"){
       this.setState({displayCur:parseInt(this.state.displayPre)-parseInt(this.state.displayCur)})
       console.log(`${this.state.displayPre} - ${this.state.displayCur} = ${parseInt(this.state.displayPre)-parseInt(this.state.displayCur)}`)
 
     }
-    if(this.state.operator === "x"){
+    else if(this.state.operator === "x"){
       this.setState({displayCur:parseInt(this.state.displayPre)*parseInt(this.state.displayCur)})
       console.log(`${this.state.displayPre} * ${this.state.displayCur} = ${parseInt(this.state.displayPre)*parseInt(this.state.displayCur)}`)
 
     }
-    if(this.state.operator === "÷"){
+    else if(this.state.operator === "÷"){
       this.setState({displayCur:parseInt(this.state.displayPre)/parseInt(this.state.displayCur)})
       console.log(`${this.state.displayPre} ÷ ${this.state.displayCur} = ${parseInt(this.state.displayPre)/parseInt(this.state.displayCur)}`)
 
