@@ -1,20 +1,19 @@
-
-body{
+body {
   height: 100vh;
   background-image: linear-gradient(to right, #434343 0%, black 100%);
- background-repeat: no-repeat;
- background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.wrapper{
+.wrapper {
   position: relative;
-  width:350px;
-  left:50%;
-  transform: translate(-50%,15%);
+  width: 350px;
+  left: 50%;
+  transform: translate(-50%, 15%);
 }
 
-.display{
-  padding-top:1rem;
-  padding-bottom:.75rem;
-  background-color: rgba(0,0,0,.8);
+.display {
+  padding-top: 1rem;
+  padding-bottom: .75rem;
+  background-color: rgba(0, 0, 0, .8);
 }

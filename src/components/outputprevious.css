@@ -1,8 +1,9 @@
-.pre{
+.pre {
+    min-height: 1.1rem;
     font-size: 1.1rem;
-    font-weight:light;
+    font-weight: light;
     text-align: right;
-    color:rgba(255,255,255,.65);
+    color: rgba(255, 255, 255, .65);
     word-wrap: break-word;
 
 }

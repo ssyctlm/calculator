@@ -7,24 +7,68 @@ class Calc extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      displayPre: '123',
+      displayPre: '',
       displayCur: '0',
       number: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-      operator: ['+', "-", "x", "÷"]
+      operator: ''
     }
   }
-  handleClick = val => {
-    // if (val === '0' || val === '1' || val === '2' || val === '3' || val === '4' || val === '5' || val === '6' || val === '7' || val === '8' || val === '9' || val === '.') { this.setState({ displayCur: this.state.displayCur + val }) }
-    if (this.state.number.indexOf(parseInt(val)) !== -1) {
-      this.setState({ displayCur: this.state.displayCur + val })
-    } else if (val === '0' && this.state.displayCur !== '0') {
-      this.setState({ displayCur: this.state.displayCur + val })
-    } else if (val === '.' && this.state.displayCur.indexOf(val) === -1) {
-      this.setState({ displayCur: this.state.displayCur + val })
-    } else {
-      this.setState({ displayPre: this.state.displayCur })
-    }
 
+  addNum = val => {
+    if((this.state.displayCur[0] ==='0' && this.state.displayCur.length === 1) && val!=='.'){
+      this.setState({displayCur:val})
+    }
+    else{
+      this.setState({ displayCur: this.state.displayCur + val })
+    }
+    }
+  addDecimal = val=>{
+    if(val === '.' && this.state.displayCur.indexOf(val) === -1){
+      this.setState({ displayCur: this.state.displayCur + val })
+    }
+  }
+  addZero = val =>{
+    if(this.state.displayCur[0] !== '0'){
+      this.setState({displayCur:this.state.displayCur + val})
+    }
+  }
+
+  operatorBtn = val =>{
+    this.setState({displayPre:this.state.displayCur,displayCur:'',operator:val})
+  }
+
+  clearBtn = ()=>{
+    this.setState({displayPre:' ',displayCur:'0'})
+  }
+  delBtn = () =>{
+    if(this.state.displayCur.length === 1){
+      this.setState({displayCur:'0'})
+    }
+    else{
+      this.setState({displayCur:this.state.displayCur.slice(0,-1)})
+    }
+  }
+  compute = ()=>{
+
+    if(this.state.operator === "+"){
+      this.setState({displayCur:parseInt(this.state.displayCur)+ parseInt(this.state.displayPre)})
+      console.log(`${this.state.displayPre} + ${this.state.displayCur} = ${parseInt(this.state.displayCur)+ parseInt(this.state.displayPre)}`)
+    }
+    if(this.state.operator === "-"){
+      this.setState({displayCur:parseInt(this.state.displayPre)-parseInt(this.state.displayCur)})
+      console.log(`${this.state.displayPre} - ${this.state.displayCur} = ${parseInt(this.state.displayPre)-parseInt(this.state.displayCur)}`)
+
+    }
+    if(this.state.operator === "x"){
+      this.setState({displayCur:parseInt(this.state.displayPre)*parseInt(this.state.displayCur)})
+      console.log(`${this.state.displayPre} * ${this.state.displayCur} = ${parseInt(this.state.displayPre)*parseInt(this.state.displayCur)}`)
+
+    }
+    if(this.state.operator === "÷"){
+      this.setState({displayCur:parseInt(this.state.displayPre)/parseInt(this.state.displayCur)})
+      console.log(`${this.state.displayPre} ÷ ${this.state.displayCur} = ${parseInt(this.state.displayPre)/parseInt(this.state.displayCur)}`)
+
+    }
   }
   render() {
     return (
@@ -34,32 +78,32 @@ class Calc extends Component {
           <OutputCurrent output={this.state.displayCur} />
         </div>
         <div className="row">
-          <Button id="clear" name="AC" />
-          <Button id="delete" name="Del" />
-          <Button id="divide" name="÷" />
+          <Button click={this.clearBtn} id="clear" name="AC" />
+          <Button click={this.delBtn} id="delete" name="Del" />
+          <Button click={this.operatorBtn} id="divide" name="÷" />
         </div>
         <div className="row">
-          <Button click={this.handleClick} id="seven" name="7" />
-          <Button click={this.handleClick} id="eight" name="8" />
-          <Button click={this.handleClick} id="nine" name="9" />
-          <Button id="multiply" name="x" />
+          <Button click={this.addNum} id="seven" name="7" />
+          <Button click={this.addNum} id="eight" name="8" />
+          <Button click={this.addNum} id="nine" name="9" />
+          <Button click={this.operatorBtn} id="multiply" name="x" />
         </div>
         <div className="row">
-          <Button click={this.handleClick} id="four" name="4" />
-          <Button click={this.handleClick} id="five" name="5" />
-          <Button click={this.handleClick} id="six" name="6" />
-          <Button id="substract" name="-" />
+          <Button click={this.addNum} id="four" name="4" />
+          <Button click={this.addNum} id="five" name="5" />
+          <Button click={this.addNum} id="six" name="6" />
+          <Button click={this.operatorBtn} id="substract" name="-" />
         </div>
         <div className="row">
-          <Button click={this.handleClick} id="one" name="1" />
-          <Button click={this.handleClick} id="two" name="2" />
-          <Button click={this.handleClick} id="three" name="3" />
-          <Button id="add" name="+" />
+          <Button click={this.addNum} id="one" name="1" />
+          <Button click={this.addNum} id="two" name="2" />
+          <Button click={this.addNum} id="three" name="3" />
+          <Button click={this.operatorBtn} id="add" name="+" />
         </div>
         <div className="row">
-          <Button click={this.handleClick} id="zero" name="0" />
-          <Button click={this.handleClick} id="decimal" name="." />
-          <Button id="equals" name="=" />
+          <Button click={this.addZero} id="zero" name="0" />
+          <Button click={this.addDecimal} id="decimal" name="." />
+          <Button click={this.compute} id="equals" name="=" />
         </div>
 
 
