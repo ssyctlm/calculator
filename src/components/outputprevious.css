@@ -1,9 +1,21 @@
 .pre {
-    min-height: 1.1rem;
+    min-height: 26px;
     font-size: 1.1rem;
     font-weight: light;
     text-align: right;
     color: rgba(255, 255, 255, .65);
     word-wrap: break-word;
 
+}
+
+/* .pre:nth-child(2) {
+    padding: 0 !important;
+} */
+.pre:nth-child(2) {
+    text-align: center;
+    padding: 0 !important;
+}
+
+.hide {
+    display: none;
 }

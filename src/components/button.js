@@ -44,11 +44,15 @@ export default class Button extends Component {
         case "÷":
           return "col-3 yellow "
         case "=":
-          return "col-6 yellow "
+          return "col-3 yellow "
+        case "-/+":
+          return "col-3 white "
         case "AC":
           return "col-3 yellow "
         case "Del":
           return "col-6 yellow "
+        default:
+          return ''
       }
     }
     return (
