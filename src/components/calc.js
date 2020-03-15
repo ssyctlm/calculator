@@ -104,33 +104,33 @@ class Calc extends Component {
           <OutputCurrent output={this.state.displayCur} />
         </div>
         <div className="row">
-          <Button click={this.clearBtn} id="clear" name="AC" />
-          <Button click={this.delBtn} id="delete" name="Del" />
-          <Button click={this.operatorBtn} id="divide" name="÷" />
+          <Button key="AC" click={this.clearBtn} id="clear" name="AC" />
+          <Button key="Del" click={this.delBtn} id="delete" name="Del" />
+          <Button key="÷" click={this.operatorBtn} id="divide" name="÷" />
         </div>
         <div className="row">
-          <Button click={this.addNum} id="seven" name="7" />
-          <Button click={this.addNum} id="eight" name="8" />
-          <Button click={this.addNum} id="nine" name="9" />
-          <Button click={this.operatorBtn} id="multiply" name="x" />
+          <Button key="7" click={this.addNum} id="seven" name="7" />
+          <Button key="8" click={this.addNum} id="eight" name="8" />
+          <Button key="9" click={this.addNum} id="nine" name="9" />
+          <Button key="x" click={this.operatorBtn} id="multiply" name="x" />
         </div>
         <div className="row">
-          <Button click={this.addNum} id="four" name="4" />
-          <Button click={this.addNum} id="five" name="5" />
-          <Button click={this.addNum} id="six" name="6" />
-          <Button click={this.operatorBtn} id="substract" name="-" />
+          <Button key="4" click={this.addNum} id="four" name="4" />
+          <Button key="5" click={this.addNum} id="five" name="5" />
+          <Button key="6" click={this.addNum} id="six" name="6" />
+          <Button key="-" click={this.operatorBtn} id="substract" name="-" />
         </div>
         <div className="row">
-          <Button click={this.addNum} id="one" name="1" />
-          <Button click={this.addNum} id="two" name="2" />
-          <Button click={this.addNum} id="three" name="3" />
-          <Button click={this.operatorBtn} id="add" name="+" />
+          <Button key="1" click={this.addNum} id="one" name="1" />
+          <Button key="2" click={this.addNum} id="two" name="2" />
+          <Button key="3" click={this.addNum} id="three" name="3" />
+          <Button key="+" click={this.operatorBtn} id="add" name="+" />
         </div>
         <div className="row">
-          <Button click={this.addZero} id="zero" name="0" />
-          <Button click={this.addDecimal} id="decimal" name="." />
-          <Button click={this.negative} name='-/+' />
-          <Button click={this.compute} id="equals" name="=" />
+          <Button key="0" click={this.addZero} id="zero" name="0" />
+          <Button key="." click={this.addDecimal} id="decimal" name="." />
+          <Button key="-/+" click={this.negative} name='-/+' />
+          <Button key="=" click={this.compute} id="equals" name="=" />
         </div>
 
 
